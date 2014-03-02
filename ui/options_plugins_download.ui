@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PluginsOptionsPage</class>
- <widget class="QWidget" name="PluginsOptionsPage">
+ <class>PluginsDownloadPage</class>
+ <widget class="QWidget" name="PluginsDownloadPage">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>513</width>
-    <height>312</height>
+    <width>609</width>
+    <height>474</height>
    </rect>
   </property>
   <layout class="QVBoxLayout">
@@ -23,10 +23,7 @@
       <property name="title">
        <string>Plugins</string>
       </property>
-      <layout class="QVBoxLayout">
-       <property name="spacing">
-        <number>2</number>
-       </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QTreeWidget" name="plugins">
          <property name="sizePolicy">
@@ -56,12 +53,12 @@
          </column>
          <column>
           <property name="text">
-           <string>Downloads</string>
+           <string>Author</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Author</string>
+           <string>Downloads</string>
           </property>
          </column>
         </widget>
@@ -69,41 +66,44 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
+          <widget class="QLabel" name="filter_label">
+           <property name="text">
+            <string>Filter Plugins:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="filter_pattern">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="filter_plugins">
+           <property name="text">
+            <string>Filter</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
           <widget class="QPushButton" name="install_plugin">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
+           <property name="enabled">
+            <bool>true</bool>
            </property>
            <property name="text">
-            <string>Install plugin...</string>
+            <string>Install</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="folder_open">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
+          <widget class="QPushButton" name="update_plugin">
            <property name="text">
-            <string>Open plugin folder</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="plugin_download">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Download plugins</string>
+            <string>Update</string>
            </property>
           </widget>
          </item>
@@ -159,8 +159,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>475</width>
-            <height>69</height>
+            <width>571</width>
+            <height>86</height>
            </rect>
           </property>
           <property name="sizePolicy">

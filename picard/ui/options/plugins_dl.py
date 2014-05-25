@@ -67,7 +67,7 @@ class PluginsDownloadPage(OptionsPage):
         random.seed()
 
         # This file will be downloaded
-        downloaded_json = json.load(open('plugin_list.json'))
+        downloaded_json = json.load(open('../picard-plugins/Plugins.json'))
 
         firstitem = None
         for plugin in downloaded_json['plugins']:

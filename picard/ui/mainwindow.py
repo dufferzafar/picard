@@ -20,6 +20,8 @@
 from PyQt4 import QtCore, QtGui
 
 import sys
+import platform
+import subprocess
 import os.path
 
 from picard import config, log
@@ -759,8 +761,11 @@ class MainWindow(QtGui.QMainWindow):
     def open_folder(self):
         files = self.tagger.get_files_from_objects(self.selected_objects)
         for file in files:
-            url = QtCore.QUrl.fromLocalFile(os.path.dirname(file.filename))
-            QtGui.QDesktopServices.openUrl(url)
+            if platform.system() == "Windows":
+                subprocess.Popen(["explorer", "/select,", file.filename])
+            else:
+                url = QtCore.QUrl.fromLocalFile(os.path.dirname(file.filename))
+                QtGui.QDesktopServices.openUrl(url)
 
     def show_analyze_settings_info(self):
         ret = QtGui.QMessageBox.question(self,
